@@ -6,17 +6,15 @@ set nocompatible
 " -----------------------------------------------------------------------------
 
 call plug#begin()
+  " Useful
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'kyazdani42/nvim-web-devicons' " for tree file icons
   " Aesthetics - Main
   Plug 'sainnhe/everforest'
-  " Plug 'windwp/windline.nvim'
-  Plug 'vim-airline/vim-airline'
+  Plug 'windwp/windline.nvim'
   Plug 'romgrk/barbar.nvim'
-  " File Search
+  " Fuzzy Finder
   Plug 'kyazdani42/nvim-tree.lua'
-  Plug 'kyazdani42/nvim-web-devicons' " for tree file icons
-  Plug 'junegunn/fzf.vim'
-  Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   " Utility
   Plug 'easymotion/vim-easymotion'
@@ -27,7 +25,7 @@ call plug#begin()
   Plug 'windwp/nvim-autopairs'
   Plug 'michaeljsmith/vim-indent-object'
   Plug 'tpope/vim-fugitive'
-  Plug 'airblade/vim-gitgutter'
+  Plug 'lewis6991/gitsigns.nvim'
   Plug 'preservim/tagbar'
   Plug 'voldikss/vim-floaterm'
   Plug 'APZelos/blamer.nvim'
@@ -46,6 +44,9 @@ call plug#begin()
 
   Plug 'mattn/emmet-vim'
   Plug 'vim-test/vim-test'
+  Plug 'peitalin/vim-jsx-typescript'
+  Plug 'rhysd/git-messenger.vim'
+  Plug 'windwp/nvim-ts-autotag'
 
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
@@ -184,13 +185,5 @@ inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
 inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
-" -----------------------------------------------------------------------------
-" vim-gitgutter
-" -----------------------------------------------------------------------------
-nmap ]h <Plug>(GitGutterNextHunk)
-nmap [h <Plug>(GitGutterPrevHunk)
-nmap gph <Plug>(GitGutterPreviewHunk)
-
-" lsp provider to find the cursor word definition and reference
-nnoremap <silent> gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
+nmap <Leader>gm <Plug>(git-messenger)
 
