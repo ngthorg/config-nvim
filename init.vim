@@ -47,6 +47,8 @@ call plug#begin()
   Plug 'peitalin/vim-jsx-typescript'
   Plug 'rhysd/git-messenger.vim'
   Plug 'windwp/nvim-ts-autotag'
+  Plug 'mfussenegger/nvim-dap'
+  Plug 'norcalli/nvim-colorizer.lua'
 
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 

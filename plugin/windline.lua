@@ -12,7 +12,7 @@ windline.add_component({
   ---- you can use and index number
   position = 'git',
   -- if you want to add on inactive component
-  ----kind ='inactive',
+  ---- kind ='inactive',
 })
 
 windline.remove_component({ name = 'lsp_name' })
