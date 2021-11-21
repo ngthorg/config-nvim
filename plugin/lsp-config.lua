@@ -1,5 +1,6 @@
 local nvim_lsp = require'lspconfig'
 local protocol = require'vim.lsp.protocol'
+local lsp_installer = require'nvim-lsp-installer'
 
 
 ---- Use an on_attach function to only map the following keys
@@ -156,7 +157,7 @@ local formatters = {
   prettier = {
     exe = "npx",
     command = "prettier",
-    args = {"--stdin-filepath", "%filepath"}
+    args = {"--stdin-filepath", "%filepath", "--find-config-path"}
   }
 }
 

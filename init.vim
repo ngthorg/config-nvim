@@ -34,6 +34,7 @@ call plug#begin()
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'neovim/nvim-lspconfig'
   Plug 'kabouzeid/nvim-lspinstall'
+  Plug 'williamboman/nvim-lsp-installer'
   Plug 'glepnir/lspsaga.nvim'
   Plug 'hrsh7th/nvim-compe'
   Plug 'hrsh7th/vim-vsnip'
@@ -41,6 +42,7 @@ call plug#begin()
   Plug 'rafamadriz/friendly-snippets'
   Plug 'ray-x/lsp_signature.nvim'
   Plug 'ray-x/navigator.lua'
+  " Plug 'sbdchd/neoformat'
 
   Plug 'mattn/emmet-vim'
   Plug 'vim-test/vim-test'
@@ -157,6 +159,7 @@ nnoremap <silent> <leader>rg :Rg<CR>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fs <cmd>Telescope live_grep<cr>
 nnoremap <leader>fg <cmd>Telescope git_status<cr>
+nnoremap <leader>f* <cmd>Telescope grep_string<cr>
 nnoremap <leader>fl <cmd>Telescope lsp_references<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
@@ -188,4 +191,3 @@ inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
 inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
 nmap <Leader>gm <Plug>(git-messenger)
-
