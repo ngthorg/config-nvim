@@ -1,9 +1,12 @@
-require'nvim-autopairs'.setup{
-  check_ts = true,
-}
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+local cmp = require("cmp")
 
-require"nvim-autopairs.completion.compe".setup{
-  map_cr = true, --  map <CR> on insert mode
-  map_complete = true, -- it will auto insert `(` (map_char) after select function or method item
-}
+require("nvim-autopairs").setup({
+	check_ts = true,
+	map_c_h = true,
+	map_c_w = true,
+})
 
+-- If you want insert `(` after select function or method item
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
+cmp_autopairs.lisp[#cmp_autopairs.lisp + 1] = "racket"

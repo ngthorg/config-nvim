@@ -33,16 +33,31 @@ call plug#begin()
   " syntax
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'neovim/nvim-lspconfig'
-  Plug 'kabouzeid/nvim-lspinstall'
   Plug 'williamboman/nvim-lsp-installer'
   Plug 'glepnir/lspsaga.nvim'
-  Plug 'hrsh7th/nvim-compe'
+  Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+  Plug 'ray-x/lsp_signature.nvim'
+  Plug 'ray-x/navigator.lua'
+
+  " Nvim completion
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-nvim-lua'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-vsnip'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/cmp-cmdline'
+  Plug 'f3fora/cmp-spell'
+  Plug 'lukas-reineke/cmp-rg'
+  Plug 'onsails/lspkind-nvim'
+
+  " For vsnip users
   Plug 'hrsh7th/vim-vsnip'
   Plug 'hrsh7th/vim-vsnip-integ'
   Plug 'rafamadriz/friendly-snippets'
-  Plug 'ray-x/lsp_signature.nvim'
-  Plug 'ray-x/navigator.lua'
-  " Plug 'sbdchd/neoformat'
+
+  " Lint, Format
+  Plug 'jose-elias-alvarez/null-ls.nvim'
 
   Plug 'mattn/emmet-vim'
   Plug 'vim-test/vim-test'
@@ -183,11 +198,13 @@ smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l
 " -----------------------------------------------------------------------------
 " nvim-compe
 " -----------------------------------------------------------------------------
-inoremap <silent><expr> <C-Space> compe#complete()
-inoremap <silent><expr> <CR>      compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))
-inoremap <silent><expr> <C-y>     compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))
-inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
-inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+" inoremap <silent><expr> <C-Space> compe#complete()
+" inoremap <silent><expr> <CR>      compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))
+" inoremap <silent><expr> <C-y>     compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))
+" inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+" inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+" inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
 nmap <Leader>gm <Plug>(git-messenger)
+
+
