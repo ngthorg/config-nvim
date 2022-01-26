@@ -132,21 +132,9 @@ nnoremap <silent> <Space>bw :BufferOrderByWindowNumber<CR>
 " s{char}{char} to move to {char}{char}
 nmap f <Plug>(easymotion-overwin-f2)
 " You can use other keymappings like <C-l> instead of <CR> if you want to
-" use these mappings as default search and sometimes want to move cursor with
-" EasyMotion.
-function! s:incsearch_config(...) abort
-  return incsearch#util#deepextend(deepcopy({
-  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-  \   'keymap': {
-  \     "\<CR>": '<Over>(easymotion)'
-  \   },
-  \   'is_expr': 0
-  \ }), get(a:, 1, {}))
-endfunction
-
-noremap <silent><expr> /  incsearch#go(<SID>incsearch_config())
-noremap <silent><expr> ?  incsearch#go(<SID>incsearch_config({'command': '?'}))
-noremap <silent><expr> g/ incsearch#go(<SID>incsearch_config({'is_stay': 1}))
+nmap z/  <Plug>(incsearch-easymotion-/)
+nmap z?  <Plug>(incsearch-easymotion-?)
+nmap zg/ <Plug>(incsearch-easymotion-stay)
 " :help g:incsearch#auto_nohlsearch
 let g:incsearch#auto_nohlsearch = 1
 map n  <Plug>(incsearch-nohl-n)
@@ -162,27 +150,20 @@ map g# <Plug>(incsearch-nohl-g#)
 nmap <F8> :TagbarToggle<CR>
 
 " -----------------------------------------------------------------------------
-" fzf
-" -----------------------------------------------------------------------------
-nnoremap <silent> <leader><Space> :Files<CR>
-nnoremap <silent> <leader>ag :Ag<CR>
-nnoremap <silent> <leader>rg :Rg<CR>
-
-" -----------------------------------------------------------------------------
 " Telescope
 " -----------------------------------------------------------------------------
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fs <cmd>Telescope live_grep<cr>
-nnoremap <leader>fg <cmd>Telescope git_status<cr>
-nnoremap <leader>f* <cmd>Telescope grep_string<cr>
-nnoremap <leader>fl <cmd>Telescope lsp_references<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>ff <cmd>Telescope find_files<CR>
+nnoremap <leader>fs <cmd>Telescope live_grep<CR>
+nnoremap <leader>fg <cmd>Telescope git_status<CR>
+nnoremap <leader>f* <cmd>Telescope grep_string<CR>
+nnoremap <leader>fl <cmd>Telescope lsp_references<CR>
+nnoremap <leader>fb <cmd>Telescope buffers<CR>
+nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 
 " -----------------------------------------------------------------------------
 " vim-floaterm
 " -----------------------------------------------------------------------------
-nnoremap <leader>tg <cmd>FloatermNew lazygit<cr>
+nnoremap <leader>tg <cmd>FloatermNew lazygit<CR>
 
 " -----------------------------------------------------------------------------
 " vim-vsnip
@@ -195,15 +176,6 @@ smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j
 imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
 smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
 
-" -----------------------------------------------------------------------------
-" nvim-compe
-" -----------------------------------------------------------------------------
-" inoremap <silent><expr> <C-Space> compe#complete()
-" inoremap <silent><expr> <CR>      compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))
-" inoremap <silent><expr> <C-y>     compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))
-" inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-" inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
-" inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
 nmap <Leader>gm <Plug>(git-messenger)
 
