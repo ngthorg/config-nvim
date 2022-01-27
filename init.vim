@@ -177,6 +177,24 @@ imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l
 smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
 
 
+" -----------------------------------------------------------------------------
+" git
+" -----------------------------------------------------------------------------
 nmap <Leader>gm <Plug>(git-messenger)
 
+" -----------------------------------------------------------------------------
+" floaterm
+" -----------------------------------------------------------------------------
 
+let g:floaterm_keymap_new = '<Leader>tn'
+let g:floaterm_keymap_prev = '<Leader>tp'
+let g:floaterm_keymap_next = '<Leader>tP'
+let g:floaterm_keymap_hide = '<Leader>th'
+let g:floaterm_keymap_kill = '<Leader>tk'
+let g:floaterm_keymap_toggle = '<Leader>tt'
+
+" -----------------------------------------------------------------------------
+" config python host
+" -----------------------------------------------------------------------------
+let g:python_host_prog  = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
