@@ -1,6 +1,6 @@
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup {
   -- ensure_installed = "maintained",
-  ensure_installed = "all",
+  ensure_installed = 'all',
   indent = {
     enable = true,
   },
@@ -17,4 +17,3 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
   },
 }
-

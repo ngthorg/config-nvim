@@ -1,11 +1,11 @@
-require'wlsample.evil_line'
+require 'wlsample.evil_line'
 
-local windline = require'windline'
-local b_components = require'windline.components.basic'
+local windline = require 'windline'
+local b_components = require 'windline.components.basic'
 
 windline.add_component({
   name = 'filetype',
-  text = b_components.cache_file_type({ icon = true }),
+  text = b_components.cache_file_type { icon = true },
 }, {
   filetype = 'default',
   ---- it will add a new component before git component
@@ -15,4 +15,4 @@ windline.add_component({
   ---- kind ='inactive',
 })
 
-windline.remove_component({ name = 'lsp_name' })
+windline.remove_component { name = 'lsp_name' }
