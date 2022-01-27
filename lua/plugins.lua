@@ -49,7 +49,7 @@ return require('packer').startup {
     -- use 'akinsho/toggleterm.nvim'
     use 'APZelos/blamer.nvim'
     use 'sindrets/diffview.nvim'
-    -- syntax
+    -- Syntax
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
@@ -73,7 +73,6 @@ return require('packer').startup {
       },
       -- config = require("config.nvim-cmp"),
       -- setup =
-      -- config =
       -- cmd =
     }
     -- For vsnip users

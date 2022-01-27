@@ -52,25 +52,7 @@ keymap('n', 'g#', '<Plug>(incsearch-nohl-g#)', easymotionOpts)
 keymap('n', 'z/', '<Plug>(incsearch-easymotion-/)', easymotionOpts)
 keymap('n', 'z?', '<Plug>(incsearch-easymotion-?)', easymotionOpts)
 keymap('n', 'zg/', '<Plug>(incsearch-easymotion-stay)', easymotionOpts)
--- =============================================================================
--- vsnip mappings
--- =============================================================================
--- Expand
-keymap('i', '<C-j>', [["vsnip#expandable()" ? '<Plug>(vsnip-expand)' : '<C-j>']], { noremap = false, expr = true })
-keymap('s', '<C-j>', [["vsnip#expandable()" ? '<Plug>(vsnip-expand)' : '<C-j>']], { noremap = false, expr = true })
--- Expand or jump
-keymap(
-  'i',
-  '<C-l>',
-  [["vsnip#available()" ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']],
-  { noremap = false, expr = true }
-)
-keymap(
-  's',
-  '<C-l>',
-  [["vsnip#available()" ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']],
-  { noremap = false, expr = true }
-)
+
 -- =============================================================================
 -- floaterm mappings
 -- =============================================================================

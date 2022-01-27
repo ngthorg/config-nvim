@@ -39,6 +39,7 @@ vim.cmd 'colorscheme everforest'
 -- =============================================================================
 vim.g.python_host_prog = '/usr/bin/python'
 vim.g.python3_host_prog = '/usr/bin/python3'
+
 -- =============================================================================
 -- floatterm mappings
 -- =============================================================================
@@ -48,6 +49,7 @@ vim.g.floaterm_keymap_next = '<Leader>tP'
 vim.g.floaterm_keymap_hide = '<Leader>th'
 vim.g.floaterm_keymap_kill = '<Leader>tk'
 vim.g.floaterm_keymap_toggle = '<Leader>tt'
+
 -- =============================================================================
 -- easymotion mappings
 -- =============================================================================
