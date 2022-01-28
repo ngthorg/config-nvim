@@ -1,6 +1,3 @@
-vim.o.incsearch = true
-vim.o.completeopt = 'menu,menuone,preview,noinsert,noselect'
-
 -- lspkind
 local lspkind = require 'lspkind'
 lspkind.init {
@@ -15,10 +12,9 @@ cmp.setup {
   experimental = {
     ghost_text = true,
   },
-  documentation = {
-    border = { '', '', '', ' ', '', '', '', ' ' },
-    -- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  },
+  -- documentation = {
+  --   border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+  -- },
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
