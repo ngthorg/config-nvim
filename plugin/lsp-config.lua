@@ -1,6 +1,7 @@
 local lspconfig = require 'lspconfig'
 local protocol = require 'vim.lsp.protocol'
 local lsp_installer = require 'nvim-lsp-installer'
+local nvim_lsp = require 'lspconfig'
 
 ---- Use an on_attach function to only map the following keys
 ---- after the language server attaches to the current buffer
@@ -36,18 +37,19 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
-  -- -- formatting
-  -- if client.name == "tsserver" then
-  -- 	client.resolved_capabilities.document_formatting = false
-  -- end
+  -- if you're using tsserver but only want to use null-ls for formatting
+  if client.name == 'tsserver' then
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
+  end
 
   if client.resolved_capabilities.document_formatting then
-    vim.cmd [[augroup Format]]
+    vim.cmd [[augroup LspFormatting]]
     vim.cmd [[autocmd! * <buffer>]]
-    vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+    vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
     vim.cmd [[augroup END]]
   elseif client.resolved_capabilities.document_range_formatting then
-    vim.cmd [[augroup Format]]
+    vim.cmd [[augroup LspFormatting]]
     vim.cmd [[autocmd! * <buffer>]]
     vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.range_formatting()]]
     vim.cmd [[augroup END]]

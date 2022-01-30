@@ -69,6 +69,7 @@ return require('packer').startup {
         { 'hrsh7th/cmp-cmdline' },
         { 'f3fora/cmp-spell' },
         { 'lukas-reineke/cmp-rg' },
+        { 'ray-x/cmp-treesitter' },
         { 'onsails/lspkind-nvim' },
       },
       -- config = require("config.nvim-cmp"),

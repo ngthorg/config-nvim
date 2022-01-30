@@ -37,6 +37,7 @@ cmp.setup {
     { name = 'path' },
     { name = 'spell' },
     { name = 'buffer' },
+    { name = 'treesitter' },
     -- { name = "rg", option = { additional_arguments = "--smart-case" } },
   },
   formatting = {
@@ -52,6 +53,7 @@ cmp.setup {
         spell = ' 暈',
         buffer = ' ﬘',
         rg = ' ☂',
+        treesitter = ' ',
       })[entry.source.name]
 
       return vim_item
