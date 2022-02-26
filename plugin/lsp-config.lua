@@ -44,15 +44,19 @@ local on_attach = function(client, bufnr)
   end
 
   if client.resolved_capabilities.document_formatting then
-    vim.cmd [[augroup LspFormatting]]
-    vim.cmd [[autocmd! * <buffer>]]
-    vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
-    vim.cmd [[augroup END]]
+    vim.cmd [[
+      augroup LspFormatting
+      autocmd! * <buffer>
+      autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+      augroup END
+    ]]
   elseif client.resolved_capabilities.document_range_formatting then
-    vim.cmd [[augroup LspFormatting]]
-    vim.cmd [[autocmd! * <buffer>]]
-    vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.range_formatting()]]
-    vim.cmd [[augroup END]]
+    vim.cmd [[
+      augroup LspFormatting
+      autocmd! * <buffer>
+      autocmd BufWritePre <buffer> lua vim.lsp.buf.range_formatting()
+      augroup END
+    ]]
   end
 end
 
